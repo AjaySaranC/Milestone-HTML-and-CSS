@@ -189,4 +189,56 @@
   const myCollection = document.getElementsByTagName("p");
   document.getElementById("demo").innerHTML = "The innerHTML of the second paragraph is: " + myCollection[1].innerHTML;
   ```
-```
+
+
+### HTML and XHTML
+- HTML is the standard markup language for creating web pages.
+- XHTML is a stricter and more XML-based version of HTML.
+  - Developed to be more compatible with XML tools.
+  - Ensures cleaner, more reliable code.
+
+### 1.6 Elements, Tags, Attributes and Layouts
+
+#### HTML Elements
+- An HTML element is everything from the start tag to the end tag:
+  ```html
+  <tagname>Content goes here...</tagname>
+  ```
+- Examples of HTML elements:
+  ```html
+  <h1>My First Heading</h1>
+  ```
+- The `<html>` element is the root element and defines the whole HTML document.
+- The `<body>` element defines the document's body.
+- Some HTML elements display correctly even without an end tag:
+  ```html
+  <p>This is a paragraph
+  <p>This is a paragraph
+  ```
+
+#### HTML Attributes
+- All HTML elements can have attributes.
+- Attributes provide additional information about elements.
+- Attributes are always specified in the start tag.
+- Attributes usually come in name/value pairs like: `name="value"`
+- Example:
+  ```html
+  <a href="www.sample.com">SampleWebsite</a>
+  ```
+
+#### URL Specification
+Two ways to specify the URL in the src attribute:
+1. Absolute URL: Links to an external website
+2. Relative URL: Links to an image within the website
+
+#### Other Attributes
+- The `title` attribute: Defines extra information about an element.
+- The `lang` attribute: Should be included in the `<html>` tag to declare the language of the web page. Assists search engines and browsers.
+
+#### HTML Layout
+- HTML has several semantic elements that define different parts of a web page.
+- Four techniques to create multicolumn layouts:
+  1. CSS framework
+  2. CSS float property
+  3. CSS flexbox
+  4. CSS grid
