@@ -92,3 +92,101 @@
   <script>
   document.getElementById("myBtn").onclick = displayDate;
   </script>
+
+
+
+#### 1.5 DOM Events
+- **The onload and onunload Events:**
+  - Triggered when the user enters or leaves the page.
+  - Can be used to check visitor's browser type and version:
+    ```html
+    <body onload="checkCookies()">
+    ```
+
+- **Onchange Event:**
+  - Often used for input field validation:
+    ```html
+    <input type="text" id="fname" onchange="upperCase()">
+    ```
+
+- **EventListener:**
+  - Attaches an event handler without overwriting existing ones:
+    ```javascript
+    document.getElementById("myBtn").addEventListener("click", displayDate);
+
+    function displayDate() {
+      document.getElementById("demo").innerHTML = Date();
+    }
+    ```
+  - Can be removed using `removeEventListener()`.
+
+- **Multiple Event Handlers:**
+  ```javascript
+  var x = document.getElementById("myBtn");
+  x.addEventListener("click", myFunction);
+  x.addEventListener("click", someOtherFunction);
+  ```
+
+- **Event Handler on Window Object:**
+  ```javascript
+  window.addEventListener("resize", function(){
+    document.getElementById("demo").innerHTML = Math.random();
+  });
+  ```
+
+- **Passing Parameters:**
+  ```javascript
+  let p1 = 5;
+  let p2 = 7;
+  document.getElementById("myBtn").addEventListener("click", function() {
+    myFunction(p1, p2);
+  });
+  ```
+
+- **Event Bubbling and Capturing:**
+  - Bubbling: Inner to outer
+  - Capturing: Outer to inner
+  - Default is bubbling (false), set to true for capturing:
+    ```javascript
+    document.getElementById("myDiv").addEventListener("click", function() {
+      alert("You clicked the orange element!");
+    }, true); // Use capturing
+    ```
+
+#### 1.6 DOM Nodes
+- Everything in an HTML document is a node.
+- Nodes have hierarchical relationships.
+- **Accessing Node Values:**
+  ```javascript
+  myTitle = document.getElementById("demo").innerHTML;
+  // or
+  myTitle = document.getElementById("demo").firstChild.nodeValue;
+  ```
+
+- **Common Node Properties:**
+  - `document.body`: The body of the document
+  - `document.documentElement`: The full document
+  - `nodeName`: Specifies the name of a node
+
+- **Creating and Appending Nodes:**
+  ```javascript
+  const para = document.createElement("p");
+  const node = document.createTextNode("This is new.");
+  para.appendChild(node);
+
+  const element = document.getElementById("div1");
+  element.appendChild(para);
+  ```
+
+- **Node Manipulation Methods:**
+  - `appendChild()`: Adds at end
+  - `insertBefore()`: Adds at beginning
+  - `remove()`: Removes a node
+  - `replaceChild()`: Replaces a node
+
+- **HTML Collections:**
+  ```javascript
+  const myCollection = document.getElementsByTagName("p");
+  document.getElementById("demo").innerHTML = "The innerHTML of the second paragraph is: " + myCollection[1].innerHTML;
+  ```
+```
