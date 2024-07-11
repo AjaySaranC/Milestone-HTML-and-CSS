@@ -250,5 +250,86 @@ Example:
   background-color: red;
 }
 ```
-```
+
+# Sass String Functions
+
+The string functions are used to manipulate and get information about strings. Sass strings are 1-based. The first character in a string is at index 1, not 0.
+# Sass String Functions
+
+| Function                          | Description & Example                                                                                   |
+|-----------------------------------|---------------------------------------------------------------------------------------------------------|
+| `quote(string)`                   | Adds quotes to string, and returns the result.                                                          |
+|                                   | **Example:** `quote(Hello world!)`<br>**Result:** `"Hello world!"`                                       |
+| `str-index(string, substring)`    | Returns the index of the first occurrence of the substring within string.                               |
+|                                   | **Example:** `str-index("Hello world!", "H")`<br>**Result:** `1`                                        |
+| `str-insert(string, insert, index)`| Returns string with insert inserted at the specified index position.                                   |
+|                                   | **Example:** `str-insert("Hello world!", " wonderful", 6)`<br>**Result:** `"Hello wonderful world!"`    |
+| `str-length(string)`              | Returns the length of string (in characters).                                                           |
+|                                   | **Example:** `str-length("Hello world!")`<br>**Result:** `12`                                           |
+| `str-slice(string, start, end)`   | Extracts characters from string; start at start and end at end, and returns the slice.                  |
+|                                   | **Example:** `str-slice("Hello world!", 2, 5)`<br>**Result:** `"ello"`                                  |
+| `to-lower-case(string)`           | Returns a copy of string converted to lower case.                                                       |
+|                                   | **Example:** `to-lower-case("Hello World!")`<br>**Result:** `"hello world!"`                            |
+| `to-upper-case(string)`           | Returns a copy of string converted to upper case.                                                       |
+|                                   | **Example:** `to-upper-case("Hello World!")`<br>**Result:** `"HELLO WORLD!"`                            |
+| `unique-id()`                     | Returns a unique randomly generated unquoted string (guaranteed to be unique within the current sass session).|
+|                                   | **Example:** `unique-id()`<br>**Result:** `tyghefnsv`                                                   |
+| `unquote(string)`                 | Removes quotes around string (if any), and returns the result.                                          |
+|                                   | **Example:** `unquote("Hello world!")`<br>**Result:** `Hello world!`                                    |
+
+
+# Sass List Functions
+
+The list functions are used to access values in a list, combine lists, and add items to lists.
+
+Sass lists are immutable (they cannot change). So, the list functions that return a list, will return a new list, and not change the original list.
+
+Sass lists are 1-based. The first list item in a list is at index 1, not 0.
+
+The following table lists all list functions in Sass:
+
+| Function                           | Description & Example                                                                                     |
+|------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| `append(list, value, [separator])` | Adds a single value to the end of the list. `separator` can be `auto`, `comma`, or `space`. `auto` is default.|
+|                                    | **Example:** `append((a b c), d)`<br>**Result:** `a b c d`<br>**Example:** `append((a b c), (d), comma)`<br>**Result:** `a, b, c, d` |
+| `index(list, value)`               | Returns the index position for the value in list.                                                         |
+|                                    | **Example:** `index(a b c, b)`<br>**Result:** `2`<br>**Example:** `index(a b c, f)`<br>**Result:** `null` |
+| `is-bracketed(list)`               | Checks whether the list has square brackets.                                                              |
+|                                    | **Example:** `is-bracketed([a b c])`<br>**Result:** `true`<br>**Example:** `is-bracketed(a b c)`<br>**Result:** `false` |
+| `join(list1, list2, [separator, bracketed])` | Appends `list2` to the end of `list1`. `separator` can be `auto`, `comma`, or `space`. `auto` is default (will use the separator in the first list). `bracketed` can be `auto`, `true`, or `false`. `auto` is default. |
+|                                    | **Example:** `join(a b c, d e f)`<br>**Result:** `a b c d e f`<br>**Example:** `join((a b c), (d e f), comma)`<br>**Result:** `a, b, c, d, e, f`<br>**Example:** `join(a b c, d e f, $bracketed: true)`<br>**Result:** `[a b c d e f]` |
+| `length(list)`                     | Returns the length of the list.                                                                            |
+|                                    | **Example:** `length(a b c)`<br>**Result:** `3`                                                           |
+| `list-separator(list)`             | Returns the list separator used, as a string. Can be either `space` or `comma`.                            |
+|                                    | **Example:** `list-separator(a b c)`<br>**Result:** `"space"`<br>**Example:** `list-separator(a, b, c)`<br>**Result:** `"comma"` |
+| `nth(list, n)`                     | Returns the nth element in the list.                                                                       |
+|                                    | **Example:** `nth(a b c, 3)`<br>**Result:** `c`                                                           |
+| `set-nth(list, n, value)`          | Sets the nth list element to the value specified.                                                          |
+|                                    | **Example:** `set-nth(a b c, 2, x)`<br>**Result:** `a x c`                                                |
+| `zip(lists)`                       | Combines lists into a single multidimensional list.                                                        |
+|                                    | **Example:** `zip(1px 2px 3px, solid dashed dotted, red green blue)`<br>**Result:** `1px solid red, 2px dashed green, 3px dotted blue` |
+
+# Sass Map Functions
+
+In Sass, the map data type represents one or more key/value pairs.
+
+Sass maps are immutable (they cannot change). So, the map functions that return a map, will return a new map, and not change the original map.
+
+The following table lists all map functions in Sass:
+
+| Function                         | Description & Example                                                                                     |
+|----------------------------------|-----------------------------------------------------------------------------------------------------------|
+| `map-get(map, key)`              | Returns the value for the specified key in the map.                                                       |
+|                                  | **Example:**<br>`$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)`<br>`map-get($font-sizes, "small")`<br>**Result:** `12px` |
+| `map-has-key(map, key)`          | Checks whether map has the specified key. Returns true or false.                                          |
+|                                  | **Example:**<br>`$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)`<br>`map-has-key($font-sizes, "big")`<br>**Result:** `false` |
+| `map-keys(map)`                  | Returns a list of all keys in map.                                                                        |
+|                                  | **Example:**<br>`$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)`<br>`map-keys($font-sizes)`<br>**Result:** `"small", "normal", "large"` |
+| `map-merge(map1, map2)`          | Appends map2 to the end of map1.                                                                          |
+|                                  | **Example:**<br>`$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)`<br>`$font-sizes2: ("x-large": 30px, "xx-large": 36px)`<br>`map-merge($font-sizes, $font-sizes2)`<br>**Result:** `"small": 12px, "normal": 18px, "large": 24px, "x-large": 30px, "xx-large": 36px` |
+| `map-remove(map, keys...)`       | Removes the specified keys from map.                                                                      |
+|                                  | **Example:**<br>`$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)`<br>`map-remove($font-sizes, "small")`<br>**Result:** `("normal": 18px, "large": 24px)`<br>`map-remove($font-sizes, "small", "large")`<br>**Result:** `("normal": 18px)` |
+| `map-values(map)`                | Returns a list of all values in map.                                                                      |
+|                                  | **Example:**<br>`$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)`<br>`map-values($font-sizes)`<br>**Result:** `12px, 18px, 24px` |
+
 
