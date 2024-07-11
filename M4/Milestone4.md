@@ -332,4 +332,27 @@ The following table lists all map functions in Sass:
 | `map-values(map)`                | Returns a list of all values in map.                                                                      |
 |                                  | **Example:**<br>`$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)`<br>`map-values($font-sizes)`<br>**Result:** `12px, 18px, 24px` |
 
+# Sass Color Functions
+
+## 1. Sass Set Color Functions
+
+- `rgb(red, green, blue)`
+- `rgba(red, green, blue, alpha)`
+- `hsl(hue, saturation, lightness)`
+
+## 2. Sass Get Color Functions
+
+- `red(color)`
+
+  **Example:**
+  ```scss
+  red(#7fffd4);
+  // Result: 127
+
+  red(red);
+  // Result: 255
+  
+## 3. Sass Manipulate Color Functions
+- `adjust-hue(color, degrees)`
+- `mix(color1, color2, weight)`
 
