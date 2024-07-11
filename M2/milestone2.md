@@ -242,3 +242,110 @@ Two ways to specify the URL in the src attribute:
   2. CSS float property
   3. CSS flexbox
   4. CSS grid
+
+
+### 1.7 Semantic and Non-Semantic Elements
+
+- A semantic element clearly describes its meaning to both the browser and the developer.
+  - Examples: `<article>`, `<footer>`, `<header>`, `<nav>`, `<section>`
+
+- Non-semantic elements don't add meaning to a context.
+  - Examples: 
+    ```html
+    <div class="container">
+        <p>This is a paragraph inside a div.</p>
+    </div>
+    ```
+  - Other examples include `<span>`.
+
+#### Class Attribute
+- Used to define a group of elements that share the same style or behavior.
+- Multiple elements can have the same class, and an element can have multiple classes.
+- Syntax: `<tag class="classname">Content</tag>`
+
+#### ID Attribute
+- Used to identify a unique element on the page.
+- Each ID must be unique within the document.
+- Syntax: `<tag id="unique-id">Content</tag>`
+
+#### Combining Classes and IDs
+An element can have both a class and an ID, allowing for versatile styling and scripting.
+
+Example:
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .common-style {
+            font-size: 18px;
+        }
+        #special-element {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- Content here -->
+</body>
+</html>
+```
+
+### 1.8 Formatting and Charsets
+
+#### Text Formatting
+- `<strong>` vs `<b>`:
+  - `<strong>`: Indicates strong importance or urgency (semantic).
+    ```html
+    <p>This is a <strong>very important</strong> message.</p>
+    ```
+  - `<b>`: Makes text bold without implying importance (presentational).
+    ```html
+    <p>This is a <b>bold</b> statement.</p>
+    ```
+
+- `<i>`: Defines text in an alternate voice or mood (typically italic).
+  ```html
+  <i>This text is italic</i>
+  ```
+
+- `<em>`: Defines emphasized text (typically italic).
+
+#### Other Formatting Elements
+
+| Tag | Description |
+|-----|-------------|
+| `<b>` | Defines bold text |
+| `<em>` | Defines emphasized text |
+| `<i>` | Defines a part of text in an alternate voice or mood |
+| `<small>` | Defines smaller text |
+| `<strong>` | Defines important text |
+| `<sub>` | Defines subscripted text |
+| `<sup>` | Defines superscripted text |
+| `<ins>` | Defines inserted text |
+| `<del>` | Defines deleted text |
+| `<mark>` | Defines marked/highlighted text |
+
+#### Charset
+- Specifies the character encoding for the HTML document.
+- Typically used within the `<meta>` tag inside the `<head>` section.
+  ```html
+  <head>
+      <meta charset="UTF-8">
+      <title>Document Title</title>
+  </head>
+  ```
+
+#### Common Character Encodings
+1. UTF-8:
+   - Most commonly used
+   - Can represent any character in the Unicode standard
+
+2. ISO-8859-1 (Latin-1):
+   - Older encoding for Western European languages
+   - Limited to 256 characters
+
+3. UTF-16:
+   - Uses 16-bit units
+   - Can represent all Unicode characters
+```
