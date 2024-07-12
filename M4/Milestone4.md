@@ -432,16 +432,16 @@ The background property in css is used in defining background effects.
 
 - background-image: Can set images for an element.
   ```css
-  div {
-  background-color: lightblue;
-}
+	  div {
+	  background-color: lightblue;
+	}
 
 - background-repeat: Specifies if/how a background image is repeated.
   ```css
- div {
-  background-image: url('image.jpg');
-  background-repeat: no-repeat;
-  }
+	 div {
+	  background-image: url('image.jpg');
+	  background-repeat: no-repeat;
+	  }
 
 - The background-attachment property sets whether a background image scrolls with the rest of the page, or is fixed.
 
@@ -453,5 +453,105 @@ The background property in css is used in defining background effects.
    background-position: center;
    background-position-x: center;
 
+-background-size : Defines the size of the bg image.
+   background-position: center;
+   background-position-x: center;
 
-  
+# Text , Font and Image:
+
+## Text:
+- Text Color:The color property is used to set the color of the text. `color: blue;`
+- The text-align used to set the horizontal alignment of a text. `text-align: center;`
+- The text-decoration-line used to add decorations to a text. `text-decoration-line: overline;` others: `line-through` `underline`. text-decoration-color used in adding  colors.text-decoration-style can add wavy,double etc styles.
+- text-tranformation:Can spicify lowercase,uppercase and capitalize.
+- text spacing as intent for first line space ,spacing ,line-height ,word-spacing and whitespace.Text shadow adds 3d shadows with colors too.
+- snippet:
+  ```css
+  	p{
+  		text-indent: 50px;
+  		letter-spacing: 5px;
+  		line-height: 0.8;
+  		word-spacing: 10px;
+  		white-space: nowrap;
+  		text-shadow: 2px 2px;
+  	}
+  ```
+  	
+ ## Font:
+ font-family property to specify the font of a text.
+ ```css
+	.p1 {
+  font-family: "Times New Roman", Times, serif;
+```
+
+Web Safe Fonts:
+	Web safe fonts are fonts that are universally installed across all browsers and devices.
+ - Arial (sans-serif)
+- Verdana (sans-serif)
+- Tahoma (sans-serif)
+- Trebuchet MS (sans-serif)
+- Times New Roman (serif)
+- Georgia (serif)
+- Garamond (serif)
+- Courier New (monospace)
+- Brush Script MT (cursive)
+
+The font-size property sets the size of the text.
+```css
+	h1 {
+	  font-size: 40px;
+	}
+```
+font-weight specifies the weight of the font like: bold,normal etc.
+` p.normal {
+  font-weight: normal;
+} `
+
+font-variant used in specifying the font in small caps letter.
+
+## Image:
+- border-radius is used in creating in rounded corners.
+  	snippet:
+  		```css
+			img {
+			  border-radius: 8px;
+			}
+  		```
+- Transparent Image: The opacity property can take a value from 0.0 - 1.0. The lower value, the more transparent.
+  ```css
+	  img {
+	  opacity: 0.5;
+	}
+  ```
+  - `filter` property adds visual effects (like blur and saturation) to an element.
+    ```css
+	    img {
+	  filter: grayscale(100%);
+	}
+    ```
+- Flip:
+
+```css
+	    img:hover {
+	  transform: scaleX(-1);
+	}
+```
+
+## Display , Flex:
+
+`display` property is used to specify how an element is shown on a web page
+Block level elements starts on a new line and takes full width available.
+Example:
+- <div>
+- <h1> - <h6>
+- <p>
+- <form>
+- <header>
+- <footer>
+- <section>	
+An inline element not starts on a new line and only takes wanted width.
+Example:
+- <span>
+- <a>
+- <img>
+Display:none used to hide and show elements without deketing it.Used with <script>.
