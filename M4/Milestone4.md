@@ -20,32 +20,26 @@ There are three ways of inserting a style sheet:
    <link rel="stylesheet" href="mystyle.css">
    </head>
    <body>
-   <h1>This is a heading</h1>
-   <p>This is a paragraph.</p>
+   <h1>Hello</h1>
+   <p>World.</p>
    </body>
    </html>
    ```
 
 2. **Internal CSS:**
-   An internal style sheet may be used if one single HTML page has a unique style. The internal style is defined inside the `<style>` element, inside the head section.
-
+   An internal style sheet may be used if one single HTML page has a unique style. 
    ```html
-   <!DOCTYPE html>
+  
    <html>
    <head>
    <style>
    body {
      background-color: linen;
    }
-   h1 {
-     color: maroon;
-     margin-left: 40px;
-   }
    </style>
    </head>
    <body>
-   <h1>This is a heading</h1>
-   <p>This is a paragraph.</p>
+    ...
    </body>
    ```
 
@@ -53,8 +47,8 @@ There are three ways of inserting a style sheet:
    An inline style may be used to apply a unique style for a single element.
 
    ```html
-   <h1 style="color:blue;text-align:center;">This is a heading</h1>
-   <p style="color:red;">This is a paragraph.</p>
+   <h1 style="color:blue;text-align:center;">Hello</h1>
+   <p style="color:red;">World</p>
    ```
 
 ### Cascading Order:
@@ -71,16 +65,11 @@ All the styles in a page will "cascade" into a new "virtual" style sheet by the 
 
 ```scss
 $primary_1: #a2b9bc;
-$primary_2: #b2ad7f;
-$primary_3: #878f99;
 
-/* use the variables */
 .main-header {
   background-color: $primary_1;
 }
-.menu-left {
-  background-color: $primary_2;
-}
+
 ```
 
 - A browser does not understand Sass code. Therefore, you will need a Sass pre-processor to convert Sass code into standard CSS.
@@ -99,7 +88,7 @@ With Sass, you can store information in variables, like:
 
 Syntax:
 ```scss
-$variablename: value;
+$variablename: somevalue;
 ```
 
 
@@ -109,9 +98,9 @@ $variablename: value;
 Sass variables are only available at the level of nesting where they are defined. The default behavior for variable scope can be overridden by using the `!global` switch.
 
 ```scss
-$myColor: red;
+$Color: red;
 h1 {
-  $myColor: green !global;
+  $Color: green !global;
   color: $myColor;
 }
 ```
@@ -125,7 +114,6 @@ nav {
   ul {
     margin: 0;
     padding: 0;
-    list-style: none;
   }
 }
 ```
