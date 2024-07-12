@@ -344,3 +344,114 @@ The following table lists all map functions in Sass:
 - `adjust-hue(color, degrees)`
 - `mix(color1, color2, weight)`
 
+# SCSS (Sassy CSS)
+SCSS is a preprocessor scripting language.functionalities that make it easier to manage and maintain large stylesheets.
+
+## Difference btw SASS and SCSS
+1.SASS has no Curly Braces or Semicolons: Uses indentation to separate code blocks and newlines.Has .sass Extension.
+2.While SCSS has CSS-like Syntax: Uses curly braces and semicolons, '.scss' extension.
+
+# Syntax:
+## SASS Syntax
+```sass
+$primary-color: #3498db
+
+body
+  color: $primary-color
+```
+## SCSS Syntax:
+```scss
+$primary-color: #3498db;
+
+body {
+  color: $primary-color;
+}
+```
+	
+# Height and Width:
+The css height and width are used to set height and width of elements.They dont include padding, margin and borders.
+## Values
+ - auto ,lenght, %, initial(Deafault height/w values), inherit(parent).
+```css
+div{
+height:20px;
+width:25%
+}
+```
+## Max:
+- max-width:The width is restricted to given value.
+- max-height:The height is restricted to given value.
+  ## syntax:
+  ```css
+  div{
+  max-width: 500px;
+  max-height: 500px;
+  }
+  ```
+
+  # Box Model(Margin,Border and Padding)
+  
+The Box model talks about design and layout of an element in web.Consist of:
+- Margin
+- Border
+- Padding
+  And inner goes the content.
+
+  ## Padding:
+  Padding is the space between the content box and the border.Has padding-top, padding-right, padding-bottom, padding-left.
+  - syntax:
+    ```css
+    padding: 10px;
+padding-top: 20px;
+padding-right: 15px;
+padding-bottom: 10px;
+padding-left: 5px;
+
+## Border:
+ The border surrounds the padding and the content.Has border-width, border-style, border-color.
+  - syntax:
+    ```css
+    border: 1px solid black;
+    ```
+
+## Margin:
+  Margin is the space outside the border. It separates the element from other elements .Has margin-top, margin-right, margin-bottom, margin-left.
+  - syntax:
+    ```css
+    margin : 10px;
+    margin : 25px;
+
+# BackGround:
+The background property in css is used in defining background effects.
+## properties
+- background-color: Can set bg color.
+  ```css
+  div {
+  background-color: lightblue;
+}
+
+- background-image: Can set images for an element.
+  ```css
+  div {
+  background-color: lightblue;
+}
+
+- background-repeat: Specifies if/how a background image is repeated.
+  ```css
+ div {
+  background-image: url('image.jpg');
+  background-repeat: no-repeat;
+  }
+
+- The background-attachment property sets whether a background image scrolls with the rest of the page, or is fixed.
+
+- backgound-clip: how far the bg can extend and background-origin: from where the bg starts
+  background-clip: padding-box;
+  background-origin: border-box;
+
+-background-position : Defines the position where the background can be placed.Also has x and y cords:
+   background-position: center;
+   background-position-x: center;
+
+
+  
