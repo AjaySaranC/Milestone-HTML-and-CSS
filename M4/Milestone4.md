@@ -537,24 +537,113 @@ font-variant used in specifying the font in small caps letter.
 	}
 ```
 
-## Display , Flex:
+# Display , Flex:
 
 `display` property is used to specify how an element is shown on a web page
-Block level elements starts on a new line and takes full width available.
-Example:
-- <div>
-- <h1> - <h6>
-- <p>
-- <form>
-- <header>
-- <footer>
-- <section>	
-An inline element not starts on a new line and only takes wanted width.
-Example:
-- <span>
-- <a>
-- <img>
+- Block level elements starts on a new line and takes full width available.
+
+- An inline element not starts on a new line and only takes wanted width.
+- flex: Displays element as a blocklevel flex container.
+- grid : block level grid container.
+- inline-block: The element itself formatted as inline but can apply height and width.
+- table: Elements behave as a table element.
+- inherit : inherit the property from its parent.
 Display:none used to hide and show elements without deketing it.Used with <script>.
+
+## Flex
+`Flex` has made the responsive layout an eaasy task.It has container and its element.
+```css
+	.flex-container {
+	  display: flex;
+	}
+```
+- flex properties(For containers):
+  1. flex-direction: Defines in which direction the container wants to stack the flex items.row or column.Default calue is row.
+   Ex:
+  ```css
+	  .flex-container {
+	  display: flex;
+	  flex-direction: column;
+	}
+  ``` 
+  2.  flex-direction: column-reverse: AMkes the element inside in reverse order in terms of column.
+  ```css
+    .flex-container {
+	  display: flex;
+	  flex-direction: column;
+	}
+  ```
+  Similarly row-reverse works for rows.
+  3.wrap: it determines whether the items should be wrapped or not.Adjust the element to be in nextline.
+
+  ```css
+	  .flex-container {
+	  display: flex;
+	  flex-wrap: wrap;
+	}
+  ```
+  no-wrap: doesnt wrap the items.Unresponsive.
+  4. Flex flow:Combiantion of both direction and wrap
+  ```css
+	  .flex-container {
+	  display: flex;
+	  flex-flow: row wrap;
+	}
+```
+5. justify-content : Aligns the flex items for x axis(row)
+Ex:
+```css
+	.flex-container {
+	  display: flex;
+	  justify-content: center;
+	}
+```
+Others: flex-start, flex-end and space-around.
+ space-around:Applies space between and after or before the lines equaly
+ space-between : only considers the mid not left of the first element and right of the last element.
+6. alignt-items:Aligns the items for y axis (column) .`align-items:center`.
+ -`align-items:stretch` : Stretches the flex to fill the container.This is default.
+ -`align-items:baseline` : aligns the elements in same baseline(linear line) irrespective of its font sizes.
+
+- flex properties(For items):
+ 1. order: Specifies the order of the flex items.
+    ```html
+	    <div>
+		  <div style="order: 3">1</div>
+		  <div style="order: 1">2</div>
+		  <div style="order: 2">3</div>
+	    </div>
+    ```
+2. flex-grow:specifies how much a flex item will grow relative to the rest of the flex items.The value must be a number, default value is 0.
+```html
+<div>
+  <div style="flex-grow: 2">1</div>
+  <div style="flex-grow: 1">2</div>
+  <div style="flex-grow: 8">3</div>
+</div>
+```
+
+3. flex-shrink: almosrt similar to flexgrow.The flex-shrink property specifies how much a flex item will shrink relative to the rest of the flex items.The value must be a number, default value is 1.
+
+4.  The flex-basis property specifies the initial length of a flex item.
+```html
+<div>
+  <div>1</div>
+  <div style="flex-basis: 150px">2</div>
+  <div>3</div>
+</div>
+```
+
+5. align-self property specifies the alignment of individual items inside the container.
+```html
+	<div class="flex-container">
+	  <div>1</div>
+	  <div>2</div>
+	  <div style="align-self: center">3</div>
+	  <div>4</div>
+	</div>
+```
+    
 
 
 
