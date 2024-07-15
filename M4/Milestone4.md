@@ -589,7 +589,8 @@ Display:none used to hide and show elements without deketing it.Used with <scrip
 	  display: flex;
 	  flex-flow: row wrap;
 	}
-```
+   ```
+  
 5. justify-content : Aligns the flex items for x axis(row)
 Ex:
 ```css
