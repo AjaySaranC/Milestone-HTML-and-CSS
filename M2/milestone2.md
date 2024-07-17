@@ -348,4 +348,3 @@ Example:
 3. UTF-16:
    - Uses 16-bit units
    - Can represent all Unicode characters
-```
